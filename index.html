@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+
+    <link rel="canonical" href="" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100%;
+        overflow-x: hidden;
+        font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI,
+          Roboto, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      a:active,
+      a:hover {
+        outline-width: 0;
+      }
+      .desktop-main {
+        padding: 0 17px 28px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+        letter-spacing: 0.3px;
+        color: #282c3f;
+        border-bottom: none;
+        -webkit-transition: left 0.2s ease-out, width 0.2s ease-out;
+        transition: left 0.2s ease-out, width 0.2s ease-out;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      a {
+        text-decoration: none;
+        color: #282c3f;
+      }
+      a {
+        background-color: transparent;
+      }
+      *,
+      :after,
+      :before {
+        -webkit-box-sizing: inherit;
+        box-sizing: inherit;
+      }
+
+      /* a {
+        background-color: transparent;
+        text-decoration: none;
+        text-align: center;
+        color: #ff3f6c;
+        text-decoration-color: #bbb;
+      } */
+
+      /* Float four columns side by side */
+      .column {
+        float: left;
+        width: 15%;
+        padding: 0 5px;
+      }
+
+      .row {
+        margin: 25px;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Responsive columns */
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+          display: block;
+          margin-bottom: 10px;
+        }
+      }
+
+      /* Style the counter cards */
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: center;
+        background-color: #444;
+        color: white;
+      }
+
+      .fa {
+        font-size: 50px;
+      }
+    </style>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .start {
+        overflow: hidden;
+        background-color: #f2f2f2;
+        padding: 35px;
+      }
+
+      .header {
+        overflow: hidden;
+        background-color: #ffffff;
+        padding: 15px;
+      }
+
+      .header a {
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 25px;
+        border-radius: 4px;
+      }
+
+      .header a.logo {
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      .header a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      .header-right {
+        float: right;
+      }
+
+      @media screen and (max-width: 500px) {
+        .header a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+
+        .header-left {
+          float: none;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .header a:not(:first-child) {
+          display: none;
+        }
+        .header a.icon {
+          float: right;
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .header.responsive {
+          position: relative;
+        }
+        .header.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .header.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+      }
+
+      .header .search-container {
+        float: left;
+        width: fit-content;
+      }
+
+      .header .icon {
+        float: right;
+      }
+
+      .header input[type="text"] {
+        display: inline-block;
+        font-size: 14px;
+        height: 20px;
+        line-height: 24px;
+        width: 95%;
+        color: #696e79;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        padding: 8px 10px 10px;
+        margin: 0;
+        outline: 0;
+        border: 1px solid #f5f5f6;
+        border-radius: 0 4px 4px 0;
+        border-left: 0;
+        background: #f5f5f6;
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+      }
+
+      .header .search-container button {
+        float: left;
+        padding: 6px 15px;
+        margin-top: 8px;
+        margin-right: 16px;
+        background: #ddd;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .header .search-container button:hover {
+        background: #ccc;
+      }
+
+      @media screen and (max-width: 600px) {
+        .header .search-container {
+          float: none;
+        }
+        .header a,
+        .header input[type="text"],
+        .header .search-container button {
+          float: none;
+          display: block;
+          text-align: left;
+          width: 200%;
+          margin: 0;
+          padding: 14px;
+        }
+        .header input[type="text"] {
+          border: 1px solid #ccc;
+        }
+      }
+      footer {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 25px;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 25px;
+        background-color: #f2f2f2;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Verdana, sans-serif;
+        margin: 0;
+      }
+      .mySlides {
+        display: none;
+      }
+      img {
+        vertical-align: middle;
+      }
+
+      /* Slideshow container */
+      .slideshow-container {
+        max-width: 2000px;
+        position: relative;
+        margin: auto;
+      }
+
+      /* Next & previous buttons */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      /* Caption text */
+      .text {
+        color: #000;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+
+      /* The dots/bullets/indicators */
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      /* Fading animation */
+      .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @-webkit-keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 800px) {
+        .prev,
+        .next,
+        .text {
+          font-size: 11px;
+        }
+      }
+    </style>
+
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      .column {
+        float: left;
+        margin: 25px;
+        margin-bottom: 5px;
+        padding: 0 5px;
+      }
+
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+          display: block;
+        }
+      }
+
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .container {
+        padding: 0 16px;
+      }
+
+      .container::after,
+      .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      .title {
+        color: grey;
+      }
+
+      .button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .button:hover {
+        background-color: #555;
+      }
+
+      img {
+        border-radius: 5px 5px 0 0;
+      }
+    </style>
+
+    <style>
+      @font-face {
+        font-family: "Whitney";
+        src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot");
+        src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.eot?#iefix")
+            format("embedded-opentype"),
+          url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.woff")
+            format("woff"),
+          url("https://constant.myntassets.com/www/fonts/WhitneyHTF-Book.ttf")
+            format("truetype");
+        font-weight: 400;
+        font-display: swap;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Whitney";
+        src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-SemiBold.eot");
+        src: url("https://constant.myntassets.com/www/fonts/WhitneyHTF-SemiBold.eot?#iefix")
+            format("embedded-opentype"),
+          url("https://constant.myntassets.com/www/fonts/WhitneyHTF-SemiBold.woff")
+            format("woff"),
+          url("https://constant.myntassets.com/www/fonts/WhitneyHTF-SemiBold.ttf")
+            format("truetype");
+        font-weight: 500;
+        font-display: swap;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="header"
+      style="
+        font-style: normal;
+        font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI,
+          Roboto, Helvetica, Arial, sans-serif;
+      "
+    >
+      <a href="./index.html" class="logo">
+        <img src="./img/myntra.png" height="30px" />
+      </a>
+      <div class="header-left">
+        <a href="./index.html">MEN</a>
+        <a href="#WOMEN">WOMEN</a>
+        <a href="#KIDS">KIDS</a>
+        <a href="#HOME">HOME & LIVING</a>
+        <a href="#HOME">BEAUTY</a>
+        <a href="#HOME">STUDIO</a>
+
+        <div class="search-container">
+          <input
+            type="text"
+            placeholder="Search for products, brands and more"
+            name="search"
+          />
+        </div>
+        <div class="icon">
+          <a href="./signin.html"
+            ><img src="./img/Profile.png" height="30px"
+          /></a>
+          <a href="#"><img src="./img/Wishlist.png" height="30px" /></a>
+          <a href="#"><img src="./img/Bag.png" height="30px" /></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="./img/Slider/1.png" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <img src="./img/Slider/2.png" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <img src="./img/Slider/3.png" style="width: 100%" />
+      </div>
+      <div class="mySlides fade">
+        <img src="./img/Slider/4.png" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <img src="./img/Slider/5.png" style="width: 100%" />
+      </div>
+
+      <div class="mySlides fade">
+        <img src="./img/Slider/6.png" style="width: 100%" />
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br />
+
+    <div style="text-align: center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+    </div>
+
+    <div class="start">
+      <h2>DEALS OF THE DAY</h2>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Deals/1.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Deals/2.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Deals/3.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Deals/4.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Deals/5.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+      <br /><br />
+      <h2>BIGGEST DEALS ON TOP BRANDS</h2>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Deals/6.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Deals/7.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Deals/8.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Deals/9.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Deals/10.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <img src="/img/Deals/11.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Deals/12.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Deals/13.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Deals/14.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Deals/15.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+      <br /><br />
+      <h2>CATEGORIES TO BAG</h2>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Bag/1.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Bag/2.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Bag/3.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Bag/4.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Bag/5.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Bag/6.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Bag/7.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Bag/8.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Bag/9.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Bag/10.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+
+      <br /><br />
+      <h2>EXPLORE TOP BRANDS</h2>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Brands/1.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Brands/2.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Brands/3.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Brands/4.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Brands/5.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Brands/6.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Brands/7.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Brands/8.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Brands/9.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Brands/10.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+
+      <br /><br />
+      <h2>MYNTRA LUXE</h2>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Luxe/1.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Luxe/2.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Luxe/3.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Luxe/4.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Luxe/5.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+
+      <br /><br />
+      <h2>TRENDING IN WESTERN WEAR</h2>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Western/1.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Western/2.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Western/3.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Western/4.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Western/5.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Western/6.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Western/7.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Western/8.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Western/9.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Western/10.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+
+      <br /><br />
+      <h2>TRENDING IN INDIAN WEAR</h2>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Indian/1.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Indian/2.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Indian/3.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Indian/4.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Indian/5.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Indian/6.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Indian/7.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Indian/8.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Indian/9.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Indian/10.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+
+      <br /><br />
+      <h2>TRENDING IN SPORTS WEAR</h2>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Sports/1.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Sports/2.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Sports/3.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Sports/4.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Sports/5.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Sports/6.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Sports/7.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Sports/8.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Sports/9.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Sports/10.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+
+      <br /><br />
+      <h2>TRENDING IN FOOTWEAR</h2>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Footwear/1.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Footwear/2.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Footwear/3.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Footwear/4.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Footwear/5.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Footwear/6.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Footwear/7.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Footwear/8.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Footwear/9.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Footwear/10.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+
+      <br /><br />
+      <h2>TRENDING IN ACCESSORIES</h2>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Accessories/1.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Accessories/2.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Accessories/3.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Accessories/4.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Accessories/5.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="/img/Accessories/6.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Accessories/7.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Accessories/8.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Accessories/9.png" alt="Deals" style="width: 100%" />
+        </div>
+        <div class="column">
+          <img src="/img/Accessories/10.png" alt="Deals" style="width: 100%" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <center>
+        <h2>India's largest Fashion Platform</h2>
+      </center>
+    </div>
+    <footer>
+      <table style="width: 100%" class="table">
+        <tr>
+          <th>ONLINE SHOPPING</th>
+          <th>USEFUL LINKS</th>
+          <th>EXPERIENCE MYNTRA APP ON MOBILE</th>
+        </tr>
+        <tr>
+          <td><a href="#">Men</a></td>
+          <td><a href="#">Contact Us</a></td>
+          <td>
+            <a href="#">
+              <img src="/img/gplay.png" alt="Deals" style="width: 25%"
+            /></a>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="#">Women</a></td>
+          <td><a href="#">FAQ</a></td>
+          <td>
+            <a href="#">
+              <img src="/img/ios.png" alt="Deals" style="width: 25%"
+            /></a>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="#">Kids</a></td>
+          <td><a href="#">T&C</a></td>
+        </tr>
+        <tr>
+          <td><a href="#">Home & Living</a></td>
+          <td><a href="#">Terms Of Use</a></td>
+          <td><h2>Keep In Touch</h2></td>
+        </tr>
+        <tr>
+          <td><a href="#">Beauty</a></td>
+          <td><a href="#">Track Orders</a></td>
+          <td>
+            <a href="#" class="fa fa-facebook"></a>
+            &nbsp;&nbsp;
+            <a href="#" class="fa fa-instagram"></a>
+            &nbsp;&nbsp;
+            <a href="#" class="fa fa-twitter"></a>
+            &nbsp;&nbsp;
+            <a href="#" class="fa fa-linkedin"></a>
+            &nbsp;&nbsp;
+            <a href="#" class="fa fa-youtube"></a>
+            &nbsp;&nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td><a href="#">Studio</a></td>
+          <td><a href="#">Shipping</a></td>
+        </tr>
+        <tr>
+          <td><a href="#">Gift Cards</a></td>
+          <td><a href="#">Cancellation</a></td>
+        </tr>
+        <tr>
+          <td><a href="#">Myntra Insider</a></td>
+          <td><a href="#">Returns</a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><a href="#">Whitehat</a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><a href="#">Blog</a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><a href="#">Careers</a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><a href="#">Privacy Policy</a></td>
+        </tr>
+      </table>
+      <center>
+        <table style="width: 100%">
+          <tr>
+            <th><h3>&copy; Copyright 2021</h3></th>
+            <th><a href="/terms">Terms</a></th>
+            <th><a href="/privacy">Privacy Policy</a></th>
+            <th><a href="/sitemap">Sitemap</a></th>
+          </tr>
+        </table>
+      </center>
+    </footer>
+
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+
+    <script>
+      var slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+      }
+    </script>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myheader");
+        if (x.className === "header") {
+          x.className += " responsive";
+        } else {
+          x.className = "header";
+        }
+      }
+    </script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBba8aPyhDUiuaAEMTR3v1FPRFpVRNzq9s",
+        authDomain: "myntra-clone-2021.firebaseapp.com",
+        projectId: "myntra-clone-2021",
+        storageBucket: "myntra-clone-2021.appspot.com",
+        messagingSenderId: "1073170788966",
+        appId: "1:1073170788966:web:f98200f6eefb9e3730b3a7",
+        measurementId: "G-2NCG22KH7R",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+  </body>
+</html>
